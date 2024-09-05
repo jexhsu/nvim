@@ -35,22 +35,18 @@ return {
   {
     'ojroques/nvim-bufdel',
     event = "BufRead",
-    config = function()
-      require('bufdel').setup {
-        next = 'tabs',
-        quit = true,
-      }
-    end
+    config = require('configs.noice')
   },
 
   {
-    'VonHeikemen/fine-cmdline.nvim',
-    event = "BufEnter",
-    dependencies = {
-      'MunifTanjim/nui.nvim'
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = require('configs.noice'),
+    opts = {
     },
-    opts = function ()
-      return require "configs.fine-cmdline"
-    end
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
   }
 }
