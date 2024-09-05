@@ -26,9 +26,9 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = "User FilePost",
-    opts = function()
-      return require "lua.configs.gitsigns"
-    end,
+    opts = {
+      current_line_blame = true,
+    }
   },
 
   -- A Neovim plugin to improve buffer deletion
